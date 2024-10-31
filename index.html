@@ -3,68 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Octobit - Edukacija Python Programiranja</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Octobit - Python Edukacija</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="description" content="Octobit website">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Octobit nudi sveobuhvatne Python programske tečajeve za početnike i napredne programere. Naučite programiranje kroz praktične projekte.">
+    <meta name="keywords" content="Python, programiranje, online tečajevi, edukacija, web development, data science">
+    <meta name="author" content="Octobit">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://octobithr.github.io/">
+    <meta property="og:title" content="Octobit - Python Programski Tečajevi">
+    <meta property="og:description" content="Naučite Python programiranje kroz praktične tečajeve i projekte">
+    <!--meta property="og:image" content="/assets/octobit-social.jpg"-->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Octobit - Python Programski Tečajevi">
+    <meta name="twitter:description" content="Naučite Python programiranje kroz praktične tečajeve i projekte">
+    <!--meta name="twitter:image" content="/assets/octobit-social.jpg"-->
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://octobithr.github.io/">
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#" class="logo"><img src="octobit_t.png" alt="Octobit Logo"></a>
-            <ul class="nav-links">
-                <li><a href="#o-nama">O nama</a></li>
-                <li><a href="#tečajevi">Tečajevi</a></li>
-                <li><a href="#predavač">Predavač</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Dobrodošli u Octobit</h1>
-            <p>Stručna edukacija Python programiranja za sve razine.</p>
-        </div>
-    </header>
-
-    <section id="o-nama" class="section about">
-        <h2>O Octobitu</h2>
-        <p>Octobit pruža visokokvalitetne tečajeve Python programiranja prilagođene svim razinama znanja.</p>
-    </section>
-
-    <section id="tečajevi" class="section courses">
-        <h2>Tečajevi</h2>
-        <div class="course-list">
-            <div class="course">
-                <h3>Osnove programskog jezika Pythona</h3>
-                <p>40 sati predavanja, vježbi i domaćih zadaća.</p>
-            </div>
-            <div class="course">
-                <h3>Uvod u programski jezik Python</h3>
-                <p>24 sati predavanja, vježbi i domaćih zadaća.</p>
-            </div>
-            <div class="course">
-                <h3>Napredno programiranje u Pythonu</h3>
-                <p>24 sati predavanja, vježbi i domaćih zadaća.</p>
-            </div>
-            <div class="course">
-                <h3>Strojno učenje i podatkovna znanost u Pythonu</h3>
-                <p>40 sati predavanja, vježbi i domaćih zadaća.</p>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center h-16 space-y-4 md:space-y-0 md:space-x-4">
+                <div class="logo-container">
+                    <img src="assets/logo_t.svg" alt="Octobit Logo" class="logo-img">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Octobit</span>
+                </div>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                    <a href="#courses" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-center md:text-left">Edukacije</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-center md:text-left">O nama</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-center md:text-left">Kontakt</a>
+                </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="predavač" class="section lecturer">
-        <h2>O predavaču</h2>
-        <p><a href="https://karloknezevic.github.io/">Dr. sc. Karlo Knežević</a></p>
-    </section>
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 py-24">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Savladaj programiranje u Pythonu</h1>
+                <p class="text-xl mb-8">Učite od stručnjaka iz industrije i akademije uz praktične projekte i primjene iz stvarnog svijeta</p>
+                <a href="#courses" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Istraži edukacije
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <section id="kontakt" class="section contact">
-        <h2>Kontaktirajte nas</h2>
-        <p>Imate pitanja? Javite se putem emaila za više informacija.</p>
-        <a href="mailto:octobit.trade@gmail.com" class="cta-button">Pošalji email</a>
-    </section>
+    <!-- Interactive Progress Section -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Tvoj put učenja</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <div class="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-blue-600 rounded-full progress-circle" style="clip: rect(0, 100px, 100px, 50px); transform: rotate(270deg);"></div>
+                        <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Osnove</h3>
+                    <p class="text-gray-600">Svladaj osnovne koncepte</p>
+                </div>
+                <div class="text-center p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <div class="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-blue-600 rounded-full progress-circle" style="clip: rect(0, 100px, 100px, 50px); transform: rotate(180deg);"></div>
+                        <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Napredni koncepti</h3>
+                    <p class="text-gray-600">Uroni duboko u Python</p>
+                </div>
+                <div class="text-center p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <div class="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+                        <div class="absolute inset-0 border-4 border-blue-600 rounded-full progress-circle" style="clip: rect(0, 100px, 100px, 50px); transform: rotate(90deg);"></div>
+                        <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Projekti</h3>
+                    <p class="text-gray-600">Izradi stvarne i korisne aplikacije</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2024 Octobit. Sva prava pridržana.</p>
+    <!-- Courses Section -->
+    <div id="courses" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Ponuda Python tečajeva</h2>
+        <div id="course-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Courses will be dynamically populated -->
+        </div>
+    </div>
+
+    <!-- Lecturer Section -->
+    <div class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Upoznaj predavača</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex lecturer-container">
+                    <img class="lecturer-image bg-gray-300 flex items-center justify-center" src="https://avatars0.githubusercontent.com/u/1936852">
+                    
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">Predavač</div>
+                        <h3 class="mt-1 text-2xl font-semibold">Dr. sc. Karlo Karlo Knežević</h3>
+                        <p class="mt-2 text-gray-600">
+                            Karlo je iskusni predavač i istraživač u području računarske znanosti s ekspertizom u strojnom učenju i evolucijskom računarstvu. Njegov pristup podučavanju kombinira teorijske osnove s praktičnim i industrijski relevantnim primjenama.
+                        </p>
+                        <div class="mt-4 flex space-x-4 justify-center md:justify-start">
+                            <button class="flex items-center text-blue-600 hover:text-blue-800 transition-colors" onclick="contact_lecturer()">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                Kontaktiraj me
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">O nama</h2>
+            <div class="max-w-3xl mx-auto text-gray-600">
+                <p class="mb-4">
+                    Octobit je edukacijska tvrtka specijalizirana za obuku u Python programiranju i razvoj softverskih rješenja. Naša misija je osigurati visoko kvalitetno obrazovanje kroz stručno vođene tečajeve, kombinirajući teorijska znanja s praktičnim iskustvima primjenjivim u industriji. 
+                </p>
+                <p>
+                    OKroz prilagođene programe, fokusiramo se na osnaživanje polaznika kako bi uspješno savladali izazove u Python programiranju i razvoju aplikacija.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">Kontaktiraj nas</h2>
+        <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md p-6">
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600">octobit.trade@gmail.com</p>
+                    <p class="text-gray-600">knezevic.karlo1@gmail.com</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Telefon</h3>
+                    <p class="text-gray-600">+385 98 952-8921</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Octobit</h3>
+                    <p class="text-gray-400">Budućnost Python programiranja počinje ovdje!</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Poveznice</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#courses" class="hover:text-white">Edukacije</a></li>
+                        <li><a href="#about" class="hover:text-white">O nama</a></li>
+                        <li><a href="#contact" class="hover:text-white">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Zaprati nas</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/karloknezevic/" class="text-gray-400 hover:text-white">LinkedIn</a>
+                        <a href="https://github.com/octobithr" class="text-gray-400 hover:text-white">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Octobit. Sva prava pridržana.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Course Template Script -->
+    <script src="courses.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
 </body>
 </html>

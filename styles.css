@@ -1,0 +1,68 @@
+/* Custom styles beyond Tailwind */
+.course-card {
+    transition: transform 0.2s;
+}
+.course-card:hover {
+    transform: translateY(-5px);
+}
+.hero-gradient {
+    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+}
+.progress-bar {
+    transition: width 1s ease-in-out;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* New Modal Scrolling Styles */
+#course-modal {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 1rem;
+}
+
+#course-modal > div {
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: auto;
+}
+
+/* Responsive Lecturer Image */
+.lecturer-image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .lecturer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .lecturer-image {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Add any additional custom styles */
