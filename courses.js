@@ -116,10 +116,12 @@ function openCourseModal(courseId) {
     
     const modalContent = `
         <div class="modal-content bg-white rounded-lg max-w-2xl w-full mx-4 p-6 animate-modal-in">
-            <span class="price-badge text-sm">${course.price}</span>
-            <span class="status-badge ${course.isActive ? 'status-active' : 'status-upcoming'}">
-                ${statusText}
-            </span>
+            <div class="flex flex-wrap gap-2 items-center">
+                <span class="price-badge text-sm">${course.price}</span>
+                <span class="status-badge ${course.isActive ? 'status-active' : 'status-upcoming'}">
+                    ${statusText}
+                </span>
+            </div>
             <div class="mt-4">
                 <h2 class="text-2xl font-bold mt-2">${course.title}</h2>
                 <div class="mt-4 space-y-4">
