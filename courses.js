@@ -19,9 +19,12 @@ const courses = [
             'Osnove': 'Djelomično pokriva',
             'Napredne tehnike': 'Minimalno',
             'Praktični projekti': 'Minimalno, fokus na učenju',
-            'Teorija': 'Srednje zastupljena',
-            'Cijena': '€400.00'
-        }
+            'Teorija': 'Srednje zastupljena'
+        },
+        price: '400€',
+        isActive: false,
+        maxGroupSize: 12,
+        nextGroup: 'uskoro'
     },
     {
         id: 'fundamentals',
@@ -43,9 +46,12 @@ const courses = [
             'Osnove': 'Potpuno pokriva',
             'Napredne tehnike': 'Djelomično',
             'Praktični projekti': 'Minimalno, fokus na učenju',
-            'Teorija': 'Visoko zastupljena',
-            'Cijena': '€600.00'
-        }
+            'Teorija': 'Visoko zastupljena'
+        },
+        price: '600€',
+        isActive: false,
+        maxGroupSize: 12,
+        nextGroup: 'uskoro'
     },
     {
         id: 'advanced',
@@ -70,9 +76,12 @@ const courses = [
             'Osnove': 'Prošireno',
             'Napredne tehnike': 'Vrlo visoko',
             'Praktični projekti': 'Visoko',
-            'Teorija': 'Visoko',
-            'Cijena': '€500.00'
-        }
+            'Teorija': 'Visoko'
+        },
+        price: '500€',
+        isActive: false,
+        maxGroupSize: 12,
+        nextGroup: 'uskoro'
     }
     // Add more courses here
 ];
@@ -80,13 +89,20 @@ const courses = [
 function generateCourseCards() {
     const container = document.getElementById('course-container');
     container.innerHTML = courses.map(course => `
-        <div class="course-card bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">${course.title}</h3>
-                <p class="text-gray-600 mb-4">${course.shortDescription}</p>
-                <button onclick="openCourseModal('${course.id}')" class="w-full bg-blue-900 text-white py-2 rounded hover:bg-blue-800 transition-colors">
-                    Saznaj Više
-                </button>
+        <div class="course-card modern-card interactive-btn">
+            <div class="p-6 relative z-10">
+                <div class="floating">
+                    <h3 class="text-xl font-semibold mb-2">${course.title}</h3>
+                    <p class="text-gray-600 mb-4">${course.shortDescription}</p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-blue-600 font-semibold">${course.price}</span>
+                    <button onclick="openCourseModal('${course.id}')" 
+                            class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 
+                                   transition-colors transform hover:scale-105">
+                        Saznaj Više
+                    </button>
+                </div>
             </div>
         </div>
     `).join('');
@@ -94,64 +110,89 @@ function generateCourseCards() {
 
 function openCourseModal(courseId) {
     const course = courses.find(c => c.id === courseId);
+    const statusText = course.isActive 
+        ? 'Grupa u tijeku' 
+        : `Upisi u tijeku - Nova grupa ${course.nextGroup}`;
+    
     const modalContent = `
-        <div class="bg-white rounded-lg max-w-2xl w-full mx-4 p-6">
-            <div class="flex justify-between items-start mb-4">
-                <h2 class="text-2xl font-bold">${course.title}</h2>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
-                    <!-- Close icon -->
-                </button>
-            </div>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="font-semibold text-lg mb-2">Opis Tečaja</h3>
+        <div class="modal-content bg-white rounded-lg max-w-2xl w-full mx-4 p-6 animate-modal-in">
+            <span class="price-badge text-sm">${course.price}</span>
+            <span class="status-badge ${course.isActive ? 'status-active' : 'status-upcoming'}">
+                ${statusText}
+            </span>
+            <div class="mt-4">
+                <h2 class="text-2xl font-bold mt-2">${course.title}</h2>
+                <div class="mt-4 space-y-4">
                     <p class="text-gray-600">${course.fullDescription}</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-lg mb-2">Što ćete naučiti</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        ${course.learningOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
-                    </ul>
-                </div>
-                <!-- Comparison Table -->
-                <div>
-                    <h3 class="font-semibold text-lg mb-2">Usporedba Tečaja</h3>
-                    <table class="w-full border-collapse">
-                        ${Object.entries(course.comparison).map(([key, value]) => `
-                            <tr>
-                                <td class="border p-2">${key}</td>
-                                <td class="border p-2">${value}</td>
-                            </tr>
-                        `).join('')}
-                    </table>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-lg mb-2">Detalji Tečaja</h3>
-                    <div class="grid grid-cols-2 gap-4 text-gray-600">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                            <p class="font-medium">Trajanje:</p>
-                            <p>${course.duration}</p>
+                            <span class="font-semibold">Trajanje:</span> ${course.duration}
                         </div>
                         <div>
-                            <p class="font-medium">Razina:</p>
-                            <p>${course.level}</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">Preduvjeti:</p>
-                            <p>${course.prerequisites}</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">Potvrda:</p>
-                            <p>${course.certificate ? 'Da' : 'Ne'}</p>
+                            <span class="font-semibold">Max. polaznika:</span> ${course.maxGroupSize}
                         </div>
                     </div>
-                </div>
-                <div class="pt-4">
-                    <button onclick="enrollCourse('${course.title}')" class="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-800 transition-colors">
-                        Pošalji email
-                    </button>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Što ćete naučiti</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            ${course.learningOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <!-- Comparison Table -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Usporedba Tečaja</h3>
+                        <table class="w-full border-collapse">
+                            ${Object.entries(course.comparison).map(([key, value]) => `
+                                <tr>
+                                    <td class="border p-2">${key}</td>
+                                    <td class="border p-2">${value}</td>
+                                </tr>
+                            `).join('')}
+                            <tr>
+                                <td class="border p-2 font-semibold">Cijena</td>
+                                <td class="border p-2">${course.price}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Detalji Tečaja</h3>
+                        <div class="grid grid-cols-2 gap-4 text-gray-600">
+                            <div>
+                                <p class="font-medium">Trajanje:</p>
+                                <p>${course.duration}</p>
+                            </div>
+                            <div>
+                                <p class="font-medium">Razina:</p>
+                                <p>${course.level}</p>
+                            </div>
+                            <div>
+                                <p class="font-medium">Preduvjeti:</p>
+                                <p>${course.prerequisites}</p>
+                            </div>
+                            <div>
+                                <p class="font-medium">Potvrda:</p>
+                                <p>${course.certificate ? 'Da' : 'Ne'}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button onclick="enrollCourse('${course.title}')" class="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-800 transition-colors">
+                            Pošalji email
+                        </button>
+                    </div>
                 </div>
             </div>
+            <button 
+                class="modal-close-btn" 
+                onclick="closeModal()" 
+                type="button"
+                aria-label="Close modal"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
         </div>
     `;
 

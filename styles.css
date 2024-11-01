@@ -66,3 +66,581 @@
 }
 
 /* Add any additional custom styles */
+
+/* Modern Design Elements */
+.glass-effect {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Improved Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better Responsive Design */
+.container-fluid {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Modern Card Styles */
+.modern-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved Hero Section */
+.hero-gradient {
+    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('path/to/pattern.svg');
+    opacity: 0.1;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+}
+
+/* Modal Animations */
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(-20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-modal-in {
+    animation: modalIn 0.3s ease-out forwards;
+}
+
+.modal-close-btn {
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.modal-close-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.price-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    z-index: 1000;
+}
+
+.status-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 2.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    z-index: 1000;
+}
+
+.status-active {
+    background-color: #10B981;
+    color: white;
+}
+
+.status-upcoming {
+    background-color: #F59E0B;
+    color: white;
+}
+
+/* Hover Effects for Cards */
+.course-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.course-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Background Gradient */
+.hero-gradient {
+    background: linear-gradient(-45deg, #1a365d, #2d3748, #2b6cb0, #2c5282);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Elements Animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 640px) {
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+    
+    .price-badge {
+        position: static;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Loading Skeleton Animation */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.skeleton-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #3182ce;
+    z-index: 1000;
+    transition: width 0.1s ease;
+}
+
+/* Interactive Elements */
+.interactive-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.interactive-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-btn:hover::after {
+    opacity: 0.2;
+}
+
+/* Card Hover Effects */
+.course-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #3B82F6, #A855F7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.course-card:hover::before {
+    opacity: 0.05;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none; /* Hidden by default */
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default */
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide regular menu on mobile */
+    }
+    
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 1000;
+        transition: right 0.3s ease;
+        padding-top: 5rem;
+    }
+    
+    .mobile-menu.visible {
+        right: 0;
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+}
+
+/* Improved Glass Effect for Mobile */
+@supports (backdrop-filter: blur(10px)) {
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Interactive Progress Circles */
+.progress-circle-container {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.progress-circle {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+.progress-circle-container:hover {
+    transform: scale(1.1);
+}
+
+.progress-number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.progress-circle-container:hover .progress-number {
+    color: #2b6cb0;
+    transform: scale(1.2);
+}
+
+/* Progress Circle Animation */
+@keyframes circleProgress {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animate-progress {
+    animation: circleProgress 1.5s ease-out forwards;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+    padding-top: 64px;
+}
+
+/* Update mobile menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.mobile-menu.visible {
+    transform: translateY(0);
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-menu a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Navigation styles */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Hide all navigation elements on mobile */
+@media (max-width: 768px) {
+    .nav-menu,
+    .mobile-menu,
+    .hamburger-menu,
+    .mobile-nav {
+        display: none !important; /* Force hide all navigation elements */
+    }
+    
+    /* Adjust header for mobile */
+    .glass-effect {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 1rem;
+        display: flex;
+        justify-content: center; /* Center the logo/brand */
+        align-items: center;
+    }
+}
+
+/* Remove the previous mobile navigation styles and replace with these */
+@media (max-width: 768px) {
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: block !important;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1002;
+        padding: 0.5rem;
+        cursor: pointer;
+        background: white;
+        border-radius: 5px;
+    }
+
+    /* Hide desktop navigation */
+    .nav-menu {
+        display: none;
+    }
+
+    /* Mobile menu styling */
+    .mobile-menu {
+        display: block !important;
+        position: fixed;
+        top: 64px; /* Height of header */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 64px);
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+        padding-top: 1rem;
+    }
+
+    .mobile-menu.visible {
+        transform: translateX(0);
+    }
+
+    .mobile-menu a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #4a5568;
+    }
+
+    /* Adjust header for mobile */
+    .glass-effect {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    /* Add padding to main content */
+    body {
+        padding-top: 64px;
+    }
+}
+
+/* Fix navigation display issues */
+@media (min-width: 769px) {
+    /* Desktop styles */
+    .hamburger-menu,
+    .mobile-menu {
+        display: none !important; /* Hide mobile elements on desktop */
+    }
+    
+    .nav-menu {
+        display: flex !important; /* Show desktop nav */
+    }
+}
+
+/* Modal fixes */
+#course-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100; /* Higher than navigation */
+    padding: 1rem;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    margin-top: 64px; /* Account for fixed header */
+    padding-top: 3rem; /* Add space for the header */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 9999; /* Ensure it's above all content */
+    background: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust price badge to not overlap with close button */
+.price-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem; /* Move price to the left side */
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    z-index: 1000;
+}
+
+/* Add status badge styles */
+.status-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 3rem; /* Position next to close button */
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    z-index: 1000;
+}
+
+.status-active {
+    background-color: #10B981;
+    color: white;
+}
+
+.status-inactive {
+    background-color: #EF4444;
+    color: white;
+}
+
+/* Ensure proper mobile menu display */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none !important; /* Hide desktop nav on mobile */
+    }
+    
+    .hamburger-menu {
+        display: block !important; /* Show hamburger on mobile */
+    }
+    
+    .modal-content {
+        margin: 64px 1rem 1rem 1rem; /* Add space for fixed header */
+        max-height: calc(100vh - 80px); /* Account for margins */
+    }
+}
