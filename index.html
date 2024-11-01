@@ -2,21 +2,23 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Octobit - Python Edukacija</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Octobit nudi sveobuhvatne Python programske tečajeve za početnike i napredne programere. Naučite programiranje kroz praktične projekte.">
-    <meta name="keywords" content="Python, programiranje, online tečajevi, edukacija, web development, data science">
+    <meta name="description" content="Profesionalna Python edukacija u Zagrebu. Naučite programiranje kroz praktične projekte s iskusnim predavačem Dr. sc. Karlom Kneževićem. Male grupe do 12 polaznika.">
+    <meta name="keywords" content="Python tečaj Zagreb, Python programiranje, Python edukacija, Python course Croatia, programiranje Zagreb, Karlo Knežević Python">
     <meta name="author" content="Octobit">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://octobithr.github.io/">
-    <meta property="og:title" content="Octobit - Python Programski Tečajevi">
-    <meta property="og:description" content="Naučite Python programiranje kroz praktične tečajeve i projekte">
-    <!--meta property="og:image" content="/assets/octobit-social.jpg"-->
+    <meta property="og:title" content="Python Edukacija Zagreb | Octobit | Dr. sc. Karlo Knežević">
+    <meta property="og:description" content="Profesionalna Python edukacija u Zagrebu. Male grupe, praktični projekti, iskusni predavač. Započnite svoju programersku karijeru danas!">
+    <meta property="og:image" content="https://octobithr.github.io/assets/octobit-social.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +36,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="google-site-verification" content="your-verification-code">
     <meta name="msvalidate.01" content="your-bing-verification-code">
     
@@ -47,22 +49,50 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Python Programming Courses",
-        "description": "Professional Python programming courses for beginners and advanced developers",
-        "provider": {
-            "@type": "Organization",
-            "name": "Octobit",
-            "sameAs": "https://octobithr.github.io/"
-        },
-        "instructor": {
-            "@type": "Person",
-            "name": "Dr. sc. Karlo Knežević",
-            "jobTitle": "Python Instructor",
-            "sameAs": "https://www.linkedin.com/in/karloknezevic/"
-        }
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://octobithr.github.io/#organization",
+                "name": "Octobit",
+                "url": "https://octobithr.github.io/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://octobithr.github.io/assets/logo_t.svg"
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/in/karloknezevic/",
+                    "https://github.com/octobithr"
+                ]
+            },
+            {
+                "@type": "Course",
+                "name": "Python Programming Course",
+                "description": "Professional Python programming course for beginners and advanced developers",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Octobit",
+                    "sameAs": "https://octobithr.github.io/"
+                },
+                "instructor": {
+                    "@type": "Person",
+                    "name": "Dr. sc. Karlo Knežević",
+                    "jobTitle": "Python Instructor",
+                    "sameAs": "https://www.linkedin.com/in/karloknezevic/"
+                },
+                "educationalLevel": "Beginner to Advanced",
+                "teaches": ["Python Programming", "Web Development", "Data Science"]
+            }
+        ]
     }
     </script>
+
+    <!-- Add preload for critical assets -->
+    <link rel="preload" href="assets/logo_t.svg" as="image">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+
+    <!-- Add language alternates if you have them -->
+    <link rel="alternate" hreflang="hr" href="https://octobithr.github.io/" />
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -105,7 +135,9 @@
         <div class="container-fluid fade-in">
             <div class="max-w-7xl mx-auto px-4 py-24">
                 <div class="text-center">
-                    <h1 class="text-4xl font-bold mb-4">Savladaj programiranje u Pythonu</h1>
+                    <h1 class="text-4xl font-bold mb-4">
+                        Python Edukacija u Zagrebu | Profesionalno Programiranje
+                    </h1>
                     <p class="text-xl mb-8">Učite od stručnjaka iz industrije i akademije uz praktične projekte i primjene iz stvarnog svijeta</p>
                     <a href="#courses" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                         Istraži edukacije
@@ -155,7 +187,7 @@
 
     <!-- Courses Section -->
     <div id="courses" class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-center mb-12">Ponuda Python tečajeva</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Python Tečajevi u Zagrebu</h2>
         <div id="course-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Courses will be dynamically populated -->
         </div>
